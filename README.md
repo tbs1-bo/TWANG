@@ -1,4 +1,7 @@
 # TWANG
+
+**Fork of the original [TWANG](https://github.com/Critters/TWANG) repo.**
+
 A Arduino-based, 1D, LED loving, dungeon crawler. inspired by Line Wobbler by Robin B
 
 ## Video playlist
