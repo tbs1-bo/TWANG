@@ -670,7 +670,15 @@ void getInput(){
         // if(digitalRead(rightButtonPinNumber) == HIGH) joystickTilt = 90;
         // if(digitalRead(attackButtonPinNumber) == HIGH) joystickWobble = ATTACK_THRESHOLD;
     
+    // TODO This can be changed to something connecting to an MQTT broker or
+    //   web service and fetching current values from a sending smartphone - 
+    //   e.g. from phyphox app. https://phyphox.org/de/home-de/
+    //   There is an arduino library for phyphox that might help. Here is an
+    //   an example fetching sensor data from a smartphone
+    //   https://github.com/phyphox/phyphox-arduino/blob/master/examples/getDataFromSmartphone/getDataFromSmartphone.ino
+    //
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+
     int a = (JOYSTICK_ORIENTATION == 0?ax:(JOYSTICK_ORIENTATION == 1?ay:az))/166;
     int g = (JOYSTICK_ORIENTATION == 0?gx:(JOYSTICK_ORIENTATION == 1?gy:gz));
     if(abs(a) < JOYSTICK_DEADZONE) a = 0;
