@@ -681,6 +681,29 @@ void getInput(){
     //   do the work. 
     //   https://www.arduino.cc/reference/en/language/functions/communication/serial/
     //
+
+    if (Serial.available() == 0) {
+        return;
+    }
+
+    b = Serial.read();
+    if (b == 'l') {
+        joystickTilt = -90;
+    } 
+    else if (b == 'r') {
+        joystickTilt = +90;
+    }
+    else if (b == 'w') {
+        joystickWobble = ATTACK_THRESHOLD + 1;
+    }
+    else 
+        return;
+
+    if(JOYSTICK_DIRECTION == 1) {
+        joystickTilt = 0 - joystickTilt;
+    }
+
+    /*
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
 
     int a = (JOYSTICK_ORIENTATION == 0?ax:(JOYSTICK_ORIENTATION == 1?ay:az))/166;
@@ -696,6 +719,7 @@ void getInput(){
         joystickTilt = 0-joystickTilt;
     }
     joystickWobble = abs(MPUWobbleSamples.getHighest());
+    */
 }
 
 
