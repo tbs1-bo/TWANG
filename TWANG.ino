@@ -677,6 +677,10 @@ void getInput(){
     //   an example fetching sensor data from a smartphone
     //   https://github.com/phyphox/phyphox-arduino/blob/master/examples/getDataFromSmartphone/getDataFromSmartphone.ino
     //
+    //   More easily: Use the serial interface of an arduino and let the connected device
+    //   do the work. 
+    //   https://www.arduino.cc/reference/en/language/functions/communication/serial/
+    //
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
 
     int a = (JOYSTICK_ORIENTATION == 0?ax:(JOYSTICK_ORIENTATION == 1?ay:az))/166;
