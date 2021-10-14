@@ -681,6 +681,7 @@ void getInput(){
     //   do the work. 
     //   https://www.arduino.cc/reference/en/language/functions/communication/serial/
     //
+    // TODO maybe better switch to python version https://github.com/esden/pyTWANG
 
     if (Serial.available() == 0) {
         return;
